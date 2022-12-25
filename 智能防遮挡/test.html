@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防人物遮挡实现</title>
+    <style>
+        .video {
+            width: 668px;
+            height: 376px;
+            position: relative;
+            background-color: black;
+            -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKIHdpZHRoPSI2NjhweCIgc3R5bGU9InRyYW5zZm9ybTpzY2FsZSgxLDEuMDAxKTsiIGhlaWdodD0iMzc1Ljc1cHgiIHZpZXdCb3g9IjAgMCAzMjAuMDAwMDAwIDE4MC4wMDAwMDAiCiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0Ij4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsMTgwLjAwMDAwMCkgc2NhbGUoMC4xMDAwMDAsLTAuMTAwMDAwKSIKZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSJub25lIj4KPHBhdGggZD0iTTAgOTA1IGwwIC04OTUgMTkwIDAgMTkwIDAgMCAyOSBjMCA0NyAtMTAgNjEgLTQxIDYxIC0yMSAwIC0yNyA0IC0yMyAxNSA1IDExCi05IDIyIC00NyA0MCAtMzAgMTMgLTQ4IDI0IC00MCAyNCA4IDEgMTEgNCA4IDggLTQgNCA2IDEyIDIyIDE5IDE4IDcgMzggMjgKNDkgNTEgMTEgMjEgMjkgNDYgNDAgNTYgMzAgMjcgNDcgNzQgMzMgOTAgLTE3IDIxIC0yIDk3IDI4IDEzNyA0MCA1MyA3MSA3NwoxMjggOTYgNDkgMTcgNTMgMTcgOTIgMCA1MSAtMjQgNzQgLTQ5IDk2IC0xMDggMTAgLTI2IDIzIC01MyAzMSAtNTggNyAtNiAxOAotMzMgMjUgLTU5IDExIC00NiAxNSAtNTAgNzggLTgxIDM2IC0xOCAxMDMgLTU5IDE0OSAtOTIgOTAgLTY1IDk0IC03MyA2NwotMTQ4IC04IC0yMyAtMTUgLTUxIC0xNSAtNjEgMCAtMTggMjEgLTE5IDY1NSAtMTkgbDY1NCAwIDAgNTMgYy0xIDYzIDMwIDE1MQo2NyAxODYgMTQgMTQgMzcgNDQgNTEgNjUgMjQgMzggMjQgNDEgMTAgOTAgLTEzIDUwIC0xMyA1MiAxNyAxMTAgMjUgNDggMzkgNjIKNzQgNzcgNjcgMjkgOTMgMjUgMTQ3IC0yMyBsNDcgLTQyIC01IC02MCBjLTUgLTU3IC0zIC02NCAzNCAtMTI4IDIyIC0zOCA1MQotNzUgNjQgLTg0IDIzIC0xNSAyMyAtMTggMTkgLTEzMCBsLTUgLTExNCAxNTYgMCAxNTUgMCAwIDg5NSAwIDg5NSAtMTYwMCAwCi0xNjAwIDAgMCAtODk1eiIvPgo8cGF0aCBkPSJNNDAwIDM1IGMwIC0xNCA1IC0yNSAxMCAtMjUgNiAwIDEwIDExIDEwIDI1IDAgMTQgLTQgMjUgLTEwIDI1IC01IDAgLTEwIC0xMQotMTAgLTI1eiIvPgo8L2c+Cjwvc3ZnPgo=");
+            -webkit-mask-size: 668px;
+        }
+
+        .bullet {
+            position: absolute;
+            font-size: 20px;
+            color: white;
+            animation: ani 5s linear infinite;
+        }
+
+        .showBullet {
+            position: absolute;
+            font-size: 20px;
+            color: red;
+            animation: show 5s linear infinite;
+        }
+
+        @keyframes ani {
+            0% {
+                transform: translateX(668px);
+            }
+
+            100% {
+                transform: matrix(-668px);
+            }
+        }
+
+        @keyframes show {
+            0% {
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="video">
+        <div class="bullet" style="left: 100px; top: 120px;">元芳，你怎么看</div>
+        <div class="bullet" style="left: 200px; top: 60px;">你难道就是传说中的手工耿</div>
+        <div class="bullet" style="left: 500px; top: 60px;">纯手工js弹幕</div>
+        <div class="bullet" style="left: 300px; top: 240px;">失踪人口回归</div>
+        <div class="bullet" style="left: 400px; top: 300px;">下次一定，梗哥</div>
+        <div class="showBullet" style="left: 320px; top: 20px;">完结撒花</div>
+        <div class="showBullet" style="left: 340px; top: 50px;">泪目</div>
+
+    </div>
+</body>
+
+</html>
